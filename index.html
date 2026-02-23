@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Сжатие данных без потерь: Huffman</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Huffman Compressor</h1>
+      <p>Демонстрация сжатия данных без потерь</p>
+    </header>
+
+    <main class="app-body">
+      <section class="card">
+        <h2>Ввод данных</h2>
+        <label for="inputText">Исходный текст</label>
+        <textarea id="inputText" rows="5" placeholder="Введите текст для сжатия..."></textarea>
+
+        <div class="btn-row">
+          <button id="compressBtn">Сжать</button>
+          <button id="decompressBtn" disabled>Восстановить</button>
+          <button id="clearBtn" class="btn-ghost">Очистить</button>
+          <button id="saveArchiveBtn" class="btn-ghost">Сохранить .huff</button>
+  <button id="loadArchiveBtn" class="btn-ghost">Загрузить .huff</button>
+  <input type="file" id="archiveInput" accept=".huff" style="display:none">
+        </div>
+      </section>
+
+      <section class="card grid-2">
+        <div>
+          <h2>Результат сжатия</h2>
+          <label>Двоичный код</label>
+          <textarea id="compressedText" rows="5" readonly></textarea>
+
+          <div class="stats">
+            <div>
+              <span>Исходный текст</span>
+              <strong><span id="origLength">0</span> символов</strong>
+            </div>
+            <div>
+              <span>Сжатый код</span>
+              <strong><span id="compLength">0</span> бит</strong>
+            </div>
+            <div>
+              <span>Коэффициент сжатия</span>
+              <strong><span id="ratio">0</span>x</strong>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2>Восстановленный текст</h2>
+          <textarea id="decompressedText" rows="5" readonly></textarea>
+
+          <h3>Коды символов</h3>
+          <pre id="codesView"></pre>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <span>Тематика: методы сжатия данных без потерь (Huffman)</span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
